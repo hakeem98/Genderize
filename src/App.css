@@ -1,38 +1,73 @@
 .App {
   text-align: center;
+  padding-top: 1px;
+  padding-bottom: 156px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'CustomFont';
+  src: url('F:\meta-repo\gendize-0.2\Bagel_Fat_One/BagelFatOne-Regular.ttf') format('truetype');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* navbar style */
+.Outer-list {
+  list-style: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-right: 60px;
+}
+
+.innerItem{
+  margin-left: 30px;
+}
+
+.logo{
+  font-family: 'CustomFont';
+  font-size: 25px;
+  color: skyblue;
+  margin-top: -10px;
+}
+
+.innerList{
+  margin-right: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/* headers style */
+.headers{
+  margin-top: 100px;
+}
+
+.switchButton{
+  margin: 30px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.profile{
+  padding:0 5px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  background-color: #0D9488;
+  width: auto;
+  border-radius: 10px;
+}
+#user-icon{
+  margin-left: 20px;
+  font-size: 40px;
+}
+
+.dark{
   color: white;
+  background-color: black;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sun, .moon{
+  font-size: 25px;
 }

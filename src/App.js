@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import SearchBar from './components/SearchBar/SearchBar';
+import ThemeContext from './components/ThemeContext';
+import { useState } from 'react';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider>
+      <div className={`App ${theme}`}>
+        <NavBar theme={theme} toggleTheme={toggleTheme}/>
+        <div className="headers">
+          <h1>Pedicate the gender of</h1>
+          <h1>a Person based on your name</h1>
+        </div>
+        <SearchBar theme={theme}/>
+      </div>
+    </ThemeContext.Provider>
+      
+    
   );
 }
 
